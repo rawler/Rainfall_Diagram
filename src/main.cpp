@@ -1,5 +1,7 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
+#include <limits>
+
 #include "table.cpp"
 
 using namespace std;
