@@ -2,7 +2,7 @@
 #include <iostream>
 #include <limits>
 
-#include "table.cpp"
+#include "table.hpp"
 
 using namespace std;
 

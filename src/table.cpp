@@ -1,6 +1,8 @@
 #include <iostream>
 #include <math.h>
 
+#include "table.hpp"
+
 using namespace std;
 
 void inputTableData(int level[])
