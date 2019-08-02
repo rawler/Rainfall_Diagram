@@ -1,5 +1,5 @@
-CXX      := -c++
-CXXFLAGS := -pedantic-errors -Wall -Wextra -Werror
+CXX      := c++
+CXXFLAGS := --std=c++11 -pedantic-errors -Wall -Wextra -Werror
 LDFLAGS  := -L/usr/lib -lstdc++ -lm
 BUILD    := ./build
 OBJ_DIR  := $(BUILD)/objects
@@ -11,7 +11,7 @@ SRC      :=                      \
 
 OBJECTS := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
-all: build $(APP_DIR)/$(TARGET)
+all: prepare $(APP_DIR)/$(TARGET)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(@D)
@@ -21,9 +21,9 @@ $(APP_DIR)/$(TARGET): $(OBJECTS)
 	@mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) -o $(APP_DIR)/$(TARGET) $(OBJECTS)
 
-.PHONY: all build clean debug release
+.PHONY: all prepare clean debug release
 
-build:
+prepare:
 	@mkdir -p $(APP_DIR)
 	@mkdir -p $(OBJ_DIR)
 

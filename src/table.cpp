@@ -5,25 +5,21 @@
 
 using namespace std;
 
-void inputTableData(int level[])
+void RainfallTable::addMeasurement(int year, int millimeters)
 {
-    cout << "(mm)\n";
-
-    for(int i = 0; i < 20; i++)
-    {
-        cout << "Rainfall year " << (i + 1) << ": "; cin >> level[i];
-    }
+    // TODO: implement!
 }
 
-void printTable(int level[])
+void RainfallTable::printTable() const
 {
     const double step = 100;
 
     cout << "year   0         1         2         3         4         5         6         7   (1000 mm)\n";
 
-    for(int i = 0; i < 20; i++)
+    // NOTE: This will require your compiler to be set to C++11, but 2011
+    // was 8 years ago. It's about time
+    for (std::pair<int, int> measurement : _measurements)
     {
-        auto bar = std::string(round(level[i] / step), '=');
-        cout << setw(8) << (i + 1) << "[" << bar << endl;
+        // TODO: implement table printing
     }
 }
